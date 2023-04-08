@@ -9,6 +9,8 @@ function App() {
   const [query, setQuery] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
 
 
 
@@ -32,6 +34,7 @@ function App() {
         setWeatherData(null);
       }
       setIsLoading(false);
+      setIsFirstLoad(false);
 
     };
 
@@ -49,7 +52,15 @@ function App() {
   return (
     <div className="App">
       <SearchBar onSearch={handleSearch} />
-      {isLoading ? (
+      {isFirstLoad ? (
+        <div className="Welcome">
+          <img
+            src="https://media.tenor.com/ShTnSrVLePQAAAAi/capoo-bugcat.gif"
+            alt="Enter a City Name please!"
+          />
+          <p>Enter a City Name please!</p>
+        </div>
+      ) : isLoading ? (
         <Loading />
       ) : weatherData ? (
         <WeatherCard weatherData={weatherData} />

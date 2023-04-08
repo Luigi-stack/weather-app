@@ -40,6 +40,6 @@ input {
     padding: 5px;
 }
 
-.NotFound, .Loading {
+.Welcome, .NotFound, .Loading {
     margin-top: 20px;
 }
