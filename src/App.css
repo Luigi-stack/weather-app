@@ -12,15 +12,15 @@ body {
     padding-top: 1500px;
 }
 
+h2,
+p {
+    margin: 0;
+}
+
 form {
     margin-top: 50px;
     display: flex;
     justify-content:center ;
-}
-
-h2,
-p {
-    margin: 0;
 }
 
 button {
@@ -38,4 +38,8 @@ input {
     outline: none;
     color: #00B4CC;
     padding: 5px;
+}
+
+.NotFound, .Loading {
+    margin-top: 20px;
 }
