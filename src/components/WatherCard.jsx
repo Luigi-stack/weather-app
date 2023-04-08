@@ -3,6 +3,8 @@ import React from 'react';
 function WeatherCard({ weatherData }) {
   const { name, main, weather } = weatherData;
   const temperature = Math.round(main.temp);
+  const minTemperature = Math.round(main.temp_min);
+  const maxTemperature = Math.round(main.temp_max);
   const weatherCode = weather[0].id;
 
 
@@ -28,6 +30,7 @@ function WeatherCard({ weatherData }) {
       <h2>{name}</h2>
       <img src={weatherImageSrc} alt="Weather" />
       <p>Temperature: {temperature}°C</p>
+      <p>Min: {minTemperature}°C | Max: {maxTemperature}°C</p>
       <p>Description: {weather[0].description}</p>
     </div>
   );
